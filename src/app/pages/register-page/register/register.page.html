@@ -1,0 +1,61 @@
+<ion-content class="register-page">
+  <div class="register-container">
+    <h2>Hey, aqui</h2>
+    <h1>Crie Uma Conta</h1>
+
+    <form (ngSubmit)="onRegister()" [formGroup]="registerForm" action="">
+      <ion-item lines="none">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <ion-input formControlName="fullName" placeholder="Nome Completo" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="call-outline"></ion-icon>
+        <ion-input formControlName="phoneNumber" placeholder="Número de Celular" type="tel"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+        <ion-input formControlName="email" placeholder="Email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-input formControlName="password" placeholder="Senha" [type]="showPassword ? 'text' : 'password'"></ion-input>
+        <ion-icon slot="end" [name]="showPassword ? 'eye-off-outline' : 'eye-outline'" (click)="togglePasswordVisibility()"></ion-icon>
+      </ion-item>
+
+      <div class="terms-container">
+        <ion-checkbox formControlName="acceptTerms" class="custom-checkbox"></ion-checkbox>
+        <label class="terms-label">
+            Ao continuar você aceita nossa <a href="#">Política de Privacidade</a> e <a href="#">Termos de Uso</a>
+        </label>
+      </div>
+    
+      
+
+      <ion-button class="register-button" expand="block" type="submit" [disabled]="!registerForm.valid">
+        Registre-se
+      </ion-button>
+    </form>
+
+    <div class="divider">
+      <hr class="line">
+      <span>Ou</span>
+      <hr class="line">
+    </div>
+
+    <div class="social-login">
+      <ion-button fill="clear">
+        <img src="assets/icon/google-icon.svg" alt="Google">
+      </ion-button>
+      <ion-button fill="clear">
+        <img src="assets/icon/facebook-icon.svg" alt="Facebook">
+      </ion-button>
+    </div>
+
+    <p class="login-link">
+      Ja Possui Uma Conta? <a href="/login">Login</a>
+    </p>
+  </div>
+</ion-content>
