@@ -6,13 +6,13 @@
     <!-- Email Input -->
     <ion-item lines="none" class="input-item">
       <ion-icon slot="start" name="mail-outline"></ion-icon>
-      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+      <ion-input label="E-mail" label-placement="floating" type="email" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <!-- Password Input -->
     <ion-item lines="none" class="input-item">
       <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-input type="password" placeholder="Senha" [(ngModel)]="senha"></ion-input>
+      <ion-input label="Sua Senha" label-placement="floating" type="password" [(ngModel)]="senha"></ion-input>
       <ion-icon slot="end" name="eye-off-outline" (click)="togglePasswordVisibility()"></ion-icon>
     </ion-item>
 
@@ -30,14 +30,13 @@
     </div>
 
     <div class="social-login">
-      <ion-button fill="clear" (click)="loginWithGoogle()">
-        <img src="assets/google-logo.png" alt="Google logo" />
+      <ion-button fill="clear">
+        <img src="assets/icon/social-icons/logo-google.svg" alt="Google">
       </ion-button>
-
-      <ion-button fill="clear" (click)="loginWithFacebook()">
-        <img src="assets/facebook-logo.png" alt="Facebook logo" />
+      <ion-button fill="clear">
+        <img src="assets/icon/social-icons/logo-facebook.svg" alt="Facebook">
       </ion-button>
-    </div>
+    </div>    
 
     <div class="register-link">
       Ainda Nao Tem Uma Conta? <a href="/register">Registre-se</a>
