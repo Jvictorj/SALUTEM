@@ -12,7 +12,7 @@ export class ExerciciosPage implements OnInit {
   constructor(private youtubeService: YoutubeService) {}
 
   ngOnInit() {
-    const channelId = 'UCiqWY_w0UKxixjGYws3gJdg'; // Substitua pelo seu canal
+    const channelId = 'UCh__QxB4BrLCrw-Dp_SZh1g'; // Substitua pelo seu canal
     this.youtubeService.getVideosFromChannel(channelId).subscribe(
       (data: any) => {
         this.videos = data.items;
