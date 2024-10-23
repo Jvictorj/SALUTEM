@@ -49,6 +49,35 @@
     <h2>O que você quer treinar</h2>
   </div>
 
+  <!-- Seção de Vídeos -->
+<div class="section-header">
+  <h2>Vídeos de Treino</h2>
+</div>
+
+<ion-list *ngIf="videos.length > 0" lines="none">
+  <ion-card *ngFor="let video of videos">
+    <ion-img [src]="video.snippet.thumbnails.high.url"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ video.snippet.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ video.snippet.description }}</p>
+      <ion-button
+        expand="full"
+        color="primary"
+        [href]="'https://www.youtube.com/watch?v=' + video.id.videoId"
+        target="_blank"
+      >
+        Assista o vídeo
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+
+<div *ngIf="videos.length === 0">
+  <p>No videos available</p>
+</div>
+
   <!-- Cards de Treinos Disponíveis -->
   <ion-card class="training-card">
     <ion-card-header>
