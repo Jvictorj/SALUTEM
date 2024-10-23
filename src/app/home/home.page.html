@@ -1,20 +1,95 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Hoje</ion-title>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="path/to/user-avatar.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="home-page">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Data e seleção do dia -->
+  <ion-segment class="day-selector">
+    <ion-segment-button *ngFor="let day of weekDays" [value]="day.value" (click)="selectDay(day)">
+      <ion-label>{{ day.label }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Resumo de Calorias -->
+  <div class="resumo">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>CALORIAS</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="calorias-card">
+        <div class="calorias-consumidas">
+          <p>Consumidas</p>
+          <p class="value">0 kcal</p>
+        </div>
+        <div class="calorias-circular">
+          <p>Consumir</p>
+          <p class="value">3964 kcal</p>
+        </div>
+        <div class="calorias-exercicios">
+          <p>Exercícios</p>
+          <p class="value">0 kcal</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
+
+  <!-- Dieta Personalizada -->
+  <ion-item class="custom-diet">
+    <ion-label>
+      <h3>Refeição premium</h3>
+      <p>07:00 - Café da manhã</p>
+    </ion-label>
+    <ion-button fill="outline">Mais Opções</ion-button>
+  </ion-item>
+
+  <!-- Lista de Refeições -->
+  <ion-list>
+    <ion-item class="meal-item">
+      <ion-icon slot="start" name="cafe-outline"></ion-icon>
+      <ion-label>
+        <h3>Café da manhã</h3>
+        <p>07:00</p>
+      </ion-label>
+      <ion-note slot="end">0/594 kcal</ion-note>
+      <ion-button fill="clear" slot="end">+</ion-button>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
+
+<!-- Barra de Navegação Inferior -->
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="diario">
+      <ion-icon name="book-outline"></ion-icon>
+      <ion-label>Diário</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="dietas">
+      <ion-icon name="nutrition-outline"></ion-icon>
+      <ion-label>Dietas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add" (click)="onAdd()">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="receitas">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <ion-label>Receitas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="rotinas">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <ion-label>Treino</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

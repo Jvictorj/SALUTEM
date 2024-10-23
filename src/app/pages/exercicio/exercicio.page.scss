@@ -1,0 +1,65 @@
+ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+  
+  .routine-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .routine-btn {
+    --background: linear-gradient(135deg, #f7c3fc, #e5e6fc);
+    --border-radius: 25px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .more-link {
+    color: #7b7ce6;
+    font-size: 0.85rem;
+  }
+  
+  .next-workouts {
+    margin-top: 10px;
+  }
+  
+  .workout-item {
+    --background: #ffffff;
+    --border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .training-card {
+    --background: #fff4fd;
+    --border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .training-card ion-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .training-card p {
+    font-size: 0.9rem;
+    color: #8c8c8c;
+  }
+  
