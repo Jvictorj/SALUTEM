@@ -1,0 +1,110 @@
+Listagem de caminhos de pasta
+O número de série do volume é F6E3-2C0A
+C:.
+¦   app-routing.module.ts
+¦   app.component.html
+¦   app.component.scss
+¦   app.component.spec.ts
+¦   app.component.ts
+¦   app.module.ts
+¦   estrutura_de_pastas.txt
+¦   
++---component
+¦   +---components
+¦       +---splash-content
+¦               splash-content.component.html
+¦               splash-content.component.scss
+¦               splash-content.component.spec.ts
+¦               splash-content.component.ts
+¦               splash-content.module.ts
+¦               
++---home
+¦       home-routing.module.ts
+¦       home.module.ts
+¦       home.page.html
+¦       home.page.scss
+¦       home.page.spec.ts
+¦       home.page.ts
+¦       
++---pages
+¦   +---exercicio
+¦   ¦       exercicio-routing.module.ts
+¦   ¦       exercicio.module.ts
+¦   ¦       exercicio.page.html
+¦   ¦       exercicio.page.scss
+¦   ¦       exercicio.page.spec.ts
+¦   ¦       exercicio.page.ts
+¦   ¦       
+¦   +---login-page
+¦   ¦   +---login
+¦   ¦           login-routing.module.ts
+¦   ¦           login.module.ts
+¦   ¦           login.page.html
+¦   ¦           login.page.scss
+¦   ¦           login.page.spec.ts
+¦   ¦           login.page.ts
+¦   ¦           
+¦   +---nutriente-track
+¦   ¦       nutriente-track-routing.module.ts
+¦   ¦       nutriente-track.module.ts
+¦   ¦       nutriente-track.page.html
+¦   ¦       nutriente-track.page.scss
+¦   ¦       nutriente-track.page.spec.ts
+¦   ¦       nutriente-track.page.ts
+¦   ¦       
+¦   +---register-page
+¦   ¦   +---register
+¦   ¦           register-routing.module.ts
+¦   ¦           register.module.ts
+¦   ¦           register.page.html
+¦   ¦           register.page.scss
+¦   ¦           register.page.spec.ts
+¦   ¦           register.page.ts
+¦   ¦           
+¦   +---splash-page
+¦   ¦   +---splash-1
+¦   ¦   ¦       splash-1-routing.module.ts
+¦   ¦   ¦       splash-1.module.ts
+¦   ¦   ¦       splash-1.page.html
+¦   ¦   ¦       splash-1.page.scss
+¦   ¦   ¦       splash-1.page.spec.ts
+¦   ¦   ¦       splash-1.page.ts
+¦   ¦   ¦       
+¦   ¦   +---splash-2
+¦   ¦   ¦       splash-2-routing.module.ts
+¦   ¦   ¦       splash-2.module.ts
+¦   ¦   ¦       splash-2.page.html
+¦   ¦   ¦       splash-2.page.scss
+¦   ¦   ¦       splash-2.page.spec.ts
+¦   ¦   ¦       splash-2.page.ts
+¦   ¦   ¦       
+¦   ¦   +---splash-3
+¦   ¦   ¦       splash-3-routing.module.ts
+¦   ¦   ¦       splash-3.module.ts
+¦   ¦   ¦       splash-3.page.html
+¦   ¦   ¦       splash-3.page.scss
+¦   ¦   ¦       splash-3.page.spec.ts
+¦   ¦   ¦       splash-3.page.ts
+¦   ¦   ¦       
+¦   ¦   +---splash-4
+¦   ¦           splash-4-routing.module.ts
+¦   ¦           splash-4.module.ts
+¦   ¦           splash-4.page.html
+¦   ¦           splash-4.page.scss
+¦   ¦           splash-4.page.spec.ts
+¦   ¦           splash-4.page.ts
+¦   ¦           
+¦   +---welcome-page
+¦       +---welcome
+¦               welcome-routing.module.ts
+¦               welcome.module.ts
+¦               welcome.page.html
+¦               welcome.page.scss
+¦               welcome.page.spec.ts
+¦               welcome.page.ts
+¦               
++---service
+    +---services
+            youtube.service.spec.ts
+            youtube.service.ts
+            

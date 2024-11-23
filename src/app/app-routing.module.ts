@@ -38,10 +38,16 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () => import('./pages/welcome-page/welcome/welcome.module').then( m => m.WelcomePageModule)
-  },  {
+  },
+  {
     path: 'exercicio',
     loadChildren: () => import('./pages/exercicio/exercicio.module').then( m => m.ExercicioPageModule)
   },
+  {
+    path: 'nutriente-track',
+    loadChildren: () => import('./pages/nutriente-track/nutriente-track.module').then( m => m.NutrienteTrackPageModule)
+  },
+
 
   
 ];
