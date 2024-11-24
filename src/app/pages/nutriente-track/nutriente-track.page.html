@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <!-- Campo de busca -->
   <div class="search-container">
     <ion-searchbar
       placeholder="Pesquise um alimento..."
@@ -13,21 +14,45 @@
     </ion-searchbar>
   </div>
 
-  <ion-list *ngIf="alimentos.length > 0">
-    <ion-item *ngFor="let alimento of alimentos">
+  <!-- Filtro por categoria -->
+  <ion-item>
+    <ion-label>Categoria</ion-label>
+    <ion-select [(ngModel)]="selectedCategory" (ionChange)="filterByCategory()">
+      <ion-select-option value="">Todos</ion-select-option>
+      <ion-select-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Lista de alimentos -->
+  <ion-list *ngIf="filteredAlimentos.length > 0">
+    <ion-item *ngFor="let alimento of filteredAlimentos">
       <ion-label>
         <h2>{{ alimento.description }}</h2>
         <p>Categoria: {{ alimento.category }}</p>
-        <p>Calorias: {{ alimento.energy_kcal }} kcal</p>
-        <p>Proteínas: {{ alimento.protein_g }} g</p>
-        <p>Carboidratos: {{ alimento.carbohydrate_g }} g</p>
-        <p>Gorduras: {{ alimento.lipid_g }} g</p>
-        <p>Fibras: {{ alimento.fiber_g }} g</p>
+        <p>Calorias: {{ alimento.energy_kcal | number:'1.0-2' }} kcal</p>
+        <p>Proteínas: {{ alimento.protein_g | number:'1.0-2' }} g</p>
+        <p>Carboidratos: {{ alimento.carbohydrate_g | number:'1.0-2' }} g</p>
+        <p>Gorduras: {{ alimento.lipid_g | number:'1.0-2' }} g</p>
+        <p>Fibras: {{ alimento.fiber_g | number:'1.0-2' }} g</p>
       </ion-label>
+  
+      <!-- Ajuste de quantidade com unidade dinâmica -->
+      <ion-item>
+        <ion-label>Quantidade:</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="alimento.quantity"
+          (ionChange)="updateNutritionalValues(alimento)">
+        </ion-input>
+        <ion-label>{{ alimento.unit }}</ion-label>
+      </ion-item>
     </ion-item>
   </ion-list>
 
-  <div *ngIf="alimentos.length === 0 && searchQuery.trim() !== ''" class="no-results">
+  <!-- Mensagem quando não há resultados -->
+  <div *ngIf="filteredAlimentos.length === 0 && searchQuery.trim() !== ''" class="no-results">
     <p>Nenhum alimento encontrado para "{{ searchQuery }}".</p>
   </div>
 </ion-content>
