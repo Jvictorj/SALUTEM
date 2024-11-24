@@ -1,0 +1,56 @@
+ion-content {
+    --background: #1e1e2d; /* Fundo escuro para combinar com o design */
+  }
+  
+  .search-container {
+    padding: 16px;
+  }
+  
+  ion-searchbar {
+    --background: #2a2a3b;
+    --color: #ffffff;
+    --placeholder-color: #9e9eaf;
+  }
+  
+  .nutriente-card ion-card {
+    background-color: #29293d;
+    color: #ffffff;
+    border-radius: 12px;
+    margin: 16px;
+  }
+  
+  ion-card-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1rem;
+    color: #b3b3c1;
+  }
+  
+  .nutriente-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+  }
+  
+  .info-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #d1d1e0;
+  }
+  
+  .no-results {
+    text-align: center;
+    color: #ffffff;
+    padding: 16px;
+  }
+  
+  .no-results p {
+    font-size: 1.2rem;
+    color: #b3b3c1;
+  }
+  
