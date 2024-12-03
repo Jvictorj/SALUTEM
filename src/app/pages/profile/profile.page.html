@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- User Info -->
+  <div class="profile-header">
+    <ion-avatar>
+      <img src="assets/avatar-placeholder.png" alt="User Avatar" />
+    </ion-avatar>
+    <div class="name"><h2></h2></div>
+    <ion-button class="edit-btn" color="tertiary" fill="solid" size="small">Editar</ion-button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-container">
+    <div class="stat-item">
+      <h3>180cm</h3>
+      <p>Altura</p>
+    </div>
+    <div class="stat-item">
+      <h3>65kg</h3>
+      <p>Peso</p>
+    </div>
+    <div class="stat-item">
+      <h3>22 Anos</h3>
+      <p>Idade</p>
+    </div>
+  </div>
+
+  <!-- Account Section -->
+  <ion-list>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>Dados pessoais</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="trophy-outline"></ion-icon>
+      <ion-label>Conquistas</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="time-outline"></ion-icon>
+      <ion-label>Histórico de atividades</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="barbell-outline"></ion-icon>
+      <ion-label>Progresso do treino</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <!-- Notifications -->
+  <ion-list>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="notifications-outline"></ion-icon>
+      <ion-label>Notificação</ion-label>
+      <ion-toggle slot="end" checked></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <!-- Other Section -->
+  <ion-list>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-label>Entre em Contato</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="document-text-outline"></ion-icon>
+      <ion-label>Política de Privacidade</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="settings-outline"></ion-icon>
+      <ion-label>Configuração</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
