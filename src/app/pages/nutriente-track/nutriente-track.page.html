@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Informações Nutricionais</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,40 +14,54 @@
     </ion-searchbar>
   </div>
 
-  <!-- Filtro por categoria -->
-  <ion-item>
-    <ion-label>Categoria</ion-label>
-    <ion-select [(ngModel)]="selectedCategory" (ionChange)="filterByCategory()">
-      <ion-select-option value="">Todos</ion-select-option>
-      <ion-select-option *ngFor="let category of categories" [value]="category">
-        {{ category }}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-
   <!-- Lista de alimentos -->
   <ion-list *ngIf="filteredAlimentos.length > 0">
     <ion-item *ngFor="let alimento of filteredAlimentos">
-      <ion-label>
-        <h2>{{ alimento.description }}</h2>
-        <p>Categoria: {{ alimento.category }}</p>
-        <p>Calorias: {{ alimento.energy_kcal | number:'1.0-2' }} kcal</p>
-        <p>Proteínas: {{ alimento.protein_g | number:'1.0-2' }} g</p>
-        <p>Carboidratos: {{ alimento.carbohydrate_g | number:'1.0-2' }} g</p>
-        <p>Gorduras: {{ alimento.lipid_g | number:'1.0-2' }} g</p>
-        <p>Fibras: {{ alimento.fiber_g | number:'1.0-2' }} g</p>
-      </ion-label>
-  
-      <!-- Ajuste de quantidade com unidade dinâmica -->
-      <ion-item>
-        <ion-label>Quantidade:</ion-label>
-        <ion-input
-          type="number"
-          [(ngModel)]="alimento.quantity"
-          (ionChange)="updateNutritionalValues(alimento)">
-        </ion-input>
-        <ion-label>{{ alimento.unit }}</ion-label>
-      </ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ alimento.description }}</ion-card-title>
+          <ion-card-subtitle>{{ alimento.category }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="nutriente-info">
+            <div class="info-item">
+              <ion-icon name="flame" color="danger"></ion-icon>
+              <span>Calorias: {{ alimento.energy_kcal | number:'1.0-2' }} kcal</span>
+            </div>
+            <div class="info-item">
+              <ion-icon name="barbell" color="success"></ion-icon>
+              <span>Proteínas: {{ alimento.protein_g | number:'1.0-2' }} g</span>
+            </div>
+            <div class="info-item">
+              <ion-icon name="pulse" color="tertiary"></ion-icon>
+              <span>Carboidratos: {{ alimento.carbohydrate_g | number:'1.0-2' }} g</span>
+            </div>
+            <div class="info-item">
+              <ion-icon name="nutrition" color="warning"></ion-icon>
+              <span>Gorduras: {{ alimento.lipid_g | number:'1.0-2' }} g</span>
+            </div>
+            <div class="info-item">
+              <ion-icon name="leaf" color="secondary"></ion-icon>
+              <span>Fibras: {{ alimento.fiber_g | number:'1.0-2' }} g</span>
+            </div>
+          </div>
+
+          <!-- Ajuste de quantidade -->
+          <!-- Ajuste de quantidade -->
+          <ion-item>
+            <ion-label>Quantidade:</ion-label>
+            <div class="quantity-container">
+              <ion-input
+                type="number"
+                [(ngModel)]="alimento.quantity"
+                (ionChange)="updateNutritionalValues(alimento)">
+              </ion-input>
+              <ion-label class="unit-label">{{ alimento.unit }}</ion-label>
+            </div>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
 

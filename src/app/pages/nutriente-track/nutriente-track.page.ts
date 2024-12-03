@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NutrienteService } from '../../service/services/nutriente.service';
+import { RefeicaoService } from '../../services/refeicao.service';
 
 @Component({
   selector: 'app-nutriente-track',
@@ -31,7 +32,10 @@ export class NutrienteTrackPage {
     'Verduras, hortaliças e derivados',
   ];
 
-  constructor(private nutrienteService: NutrienteService) {}
+  constructor(
+    private nutrienteService: NutrienteService,
+    private refeicaoService: RefeicaoService
+  ) {}
 
   // Buscar alimentos ao digitar
   onSearch() {
@@ -61,6 +65,12 @@ export class NutrienteTrackPage {
     );
   }
 
+  // Adicionar alimento ao serviço de refeição
+  addToMeal(alimento: any) {
+    const nomeRefeicao = 'Café da Manhã'; // Exemplo, você pode modificar para escolher uma refeição dinâmica
+    this.refeicaoService.addAlimento(nomeRefeicao, alimento);
+  }
+
   // Verificar se a categoria é líquida e definir unidade
   getUnitForCategory(category: string): string {
     const liquidCategories = ['Leite e derivados', 'Bebidas (alcoólicas e não alcoólicas)'];
@@ -88,7 +98,7 @@ export class NutrienteTrackPage {
       alimento.fiber_g = alimento.fiber_g_original;
       return;
     }
-  
+
     const factor = alimento.quantity / 100;
     alimento.energy_kcal = alimento.energy_kcal_original * factor;
     alimento.protein_g = alimento.protein_g_original * factor;
@@ -96,5 +106,4 @@ export class NutrienteTrackPage {
     alimento.lipid_g = alimento.lipid_g_original * factor;
     alimento.fiber_g = alimento.fiber_g_original * factor;
   }
-  
 }
