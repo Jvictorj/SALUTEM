@@ -46,7 +46,18 @@ const routes: Routes = [
   {
     path: 'nutriente-track',
     loadChildren: () => import('./pages/nutriente-track/nutriente-track.module').then( m => m.NutrienteTrackPageModule)
+  },  {
+    path: 'refeicao',
+    loadChildren: () => import('./pages/refeicao/refeicao.module').then( m => m.RefeicaoPageModule)
   },
+  {
+    path: 'receitas',
+    loadChildren: () => import('./pages/receitas/receitas.module').then( m => m.ReceitasPageModule)
+  },
+
+
+
+  
 
 
   
