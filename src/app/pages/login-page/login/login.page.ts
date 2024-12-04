@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +12,23 @@ export class LoginPage {
   email: string = '';
   senha: string = '';
   passwordVisible: boolean = false;
+  errorMessage: string = ''; // Para mostrar a mensagem de erro no template
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
   }
 
-  login() {
-    console.log('Login com', this.email, this.senha);
+  async login() {
+    try {
+      await this.authService.login(this.email, this.senha);
+      console.log('Login bem-sucedido!');
+      this.router.navigate(['/home']); // Redireciona após login bem-sucedido
+    } catch (error: any) {
+      this.errorMessage = error.message; // Armazena o erro para exibir no template
+      console.error('Erro ao fazer login:', error.message); // Exibe erro detalhado no console
+    }
   }
 
   forgotPassword() {
@@ -36,9 +46,7 @@ export class LoginPage {
   }
 
   register() {
-    // Redirecionar para a página de registro
+    // Redireciona para a página de registro
     console.log('Redirecionando para a página de registro...');
   }
- 
-
 }

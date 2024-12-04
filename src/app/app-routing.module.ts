@@ -3,12 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome-page/welcome/welcome.module').then( m => m.WelcomePageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
@@ -36,8 +36,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/splash-page/splash-4/splash-4.module').then( m => m.Splash4PageModule)
   },
   {
-    path: 'welcome',
-    loadChildren: () => import('./pages/welcome-page/welcome/welcome.module').then( m => m.WelcomePageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'exercicio',
@@ -46,7 +46,8 @@ const routes: Routes = [
   {
     path: 'nutriente-track',
     loadChildren: () => import('./pages/nutriente-track/nutriente-track.module').then( m => m.NutrienteTrackPageModule)
-  },  {
+  },
+  {
     path: 'refeicao',
     loadChildren: () => import('./pages/refeicao/refeicao.module').then( m => m.RefeicaoPageModule)
   },

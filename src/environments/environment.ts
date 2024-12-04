@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyAtFJ3RXxgxyRVOboL5Lck9NzIhZ_ZqZzc",
-    authDomain: "salutem-38e6e.firebaseapp.com",
-    projectId: "salutem-38e6e",
-    storageBucket: "salutem-38e6e.appspot.com",
-    messagingSenderId: "381123519552",
-    appId: "1:381123519552:web:afb287eabbc6a0fa4caba5",
-    measurementId: "G-6CXZY524QY"
+    apiKey: "AIzaSyBC5SCMhufZ7D7vvUvV2Su83Y9-rCW8fN8",
+    authDomain: "salutem-app-fitness.firebaseapp.com",
+    databaseURL: "https://salutem-app-fitness-default-rtdb.firebaseio.com",
+    projectId: "salutem-app-fitness",
+    storageBucket: "salutem-app-fitness.firebasestorage.app",
+    messagingSenderId: "11928911269",
+    appId: "1:11928911269:web:54dcf2c20b5828c325fc4c",
+    measurementId: "G-GZJ22QH82B"
   }
 };
 
