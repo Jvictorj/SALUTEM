@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { getAuth, onAuthStateChanged, User } from '@angular/fire/auth'; // Importando User
+import { AngularFirestore } from '@angular/fire/compat/firestore'; // Importando AngularFirestore
+import { AngularFireStorage } from '@angular/fire/compat/storage'; // Importando AngularFireStorage
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  // Array de dias da semana
+  userName: string = '';
+  avatarUrl: string = 'assets/avatar/default-avatar.PNG'; // URL padrão para o avatar
   weekDays = [
     { value: 'domingo', label: 'Domingo' },
     { value: 'segunda', label: 'Segunda-feira' },
@@ -17,39 +21,79 @@ export class HomePage implements OnInit {
     { value: 'sexta', label: 'Sexta-feira' },
     { value: 'sabado', label: 'Sábado' },
   ];
-
-  // Variável que armazena o dia selecionado
   selectedDay: string = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private firestore: AngularFirestore, // Injetando o serviço AngularFirestore
+    private storage: AngularFireStorage // Injetando o serviço AngularFireStorage
+  ) {}
 
   ngOnInit() {
-    // Aqui pegamos o dia atual do sistema e configuramos o selectedDay
-    const today = new Date();
-    const currentDay = today.getDay(); // getDay() retorna de 0 (domingo) a 6 (sábado)
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user: User | null) => {
+      if (user) {
+        this.userName = user.displayName || '';
+        if (!this.userName) {
+          this.firestore
+            .collection('users')
+            .doc(user.uid)
+            .get()
+            .subscribe((doc) => {
+              if (doc.exists) {
+                const userData = doc.data() as { fullName: string };
+                this.userName = userData.fullName || '';
+              } else {
+                console.log('Documento do usuário não encontrado.');
+              }
+            });
+        }
+      } else {
+        console.log('Usuário não autenticado');
+      }
+    });
 
-    // Agora vamos setar o dia atual corretamente
+    const today = new Date();
+    const currentDay = today.getDay();
     this.selectedDay = this.weekDays[currentDay].value;
   }
 
-  // Função de Seleção de Dia (se necessário para mudanças manuais)
   selectDay(day: any) {
     console.log('Dia selecionado:', day);
-    this.selectedDay = day.value; // Altera o valor de selectedDay com o dia clicado
+    this.selectedDay = day.value;
   }
 
-  // Funções de navegação para as novas páginas
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
+
   goToExercicio() {
     this.router.navigate(['/exercicio']);
   }
 
-  // Função para redirecionar para a página Nutriente Track
   goToNutriente() {
     this.router.navigate(['/nutriente-track']);
   }
 
-  // Função de adicionar refeição
   onAdd() {
     console.log('Adicionar refeição');
+  }
+
+  // Método para lidar com a seleção de arquivo
+  onFileSelected(event: any) {
+    const file = event.target.files[0]; // Pegando o primeiro arquivo selecionado
+    if (file) {
+      const filePath = `avatars/${file.name}`; // Caminho do arquivo no Firebase Storage
+      const fileRef = this.storage.ref(filePath); // Referência para o arquivo no Firebase Storage
+      const task = this.storage.upload(filePath, file); // Fazendo o upload do arquivo
+
+      task.snapshotChanges().subscribe(() => {
+        fileRef.getDownloadURL().subscribe((url) => {
+          // Atualizando o URL da imagem após o upload
+          this.avatarUrl = url;
+          console.log('Imagem do avatar atualizada com sucesso');
+        });
+      });
+    }
   }
 }

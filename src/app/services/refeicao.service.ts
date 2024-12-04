@@ -4,18 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class RefeicaoService {
-  private refeicoes: any = {};
+  refeicoes: any = {};
 
   constructor() {}
 
-  addAlimento(refeicao: string, alimento: any) {
-    if (!this.refeicoes[refeicao]) {
-      this.refeicoes[refeicao] = []; // Cria a refeição se não existir
+  // Adicionar alimento à refeição específica
+  addAlimento(nomeRefeicao: string, alimento: any) {
+    if (!this.refeicoes[nomeRefeicao]) {
+      this.refeicoes[nomeRefeicao] = [];
     }
-    this.refeicoes[refeicao].push(alimento);
+    this.refeicoes[nomeRefeicao].push(alimento);
+    console.log(`Alimento adicionado à refeição ${nomeRefeicao}`);
   }
 
-  getAlimentosPorRefeicao(refeicao: string) {
-    return this.refeicoes[refeicao] || []; // Retorna a refeição ou um array vazio se não existir
+  // Obter alimentos de uma refeição
+  getAlimentos(nomeRefeicao: string) {
+    return this.refeicoes[nomeRefeicao] || [];
   }
 }

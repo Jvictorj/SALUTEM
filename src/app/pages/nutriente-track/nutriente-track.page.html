@@ -47,7 +47,7 @@
             </div>
           </div>
 
-          <!-- Ajuste de quantidade -->
+          
           <!-- Ajuste de quantidade -->
           <ion-item>
             <ion-label>Quantidade:</ion-label>
@@ -60,6 +60,11 @@
               <ion-label class="unit-label">{{ alimento.unit }}</ion-label>
             </div>
           </ion-item>
+
+          <!-- Botão para adicionar alimento à refeição -->
+          <ion-button expand="block" (click)="addToMeal(alimento)">
+            Adicionar à Refeição
+          </ion-button>
         </ion-card-content>
       </ion-card>
     </ion-item>

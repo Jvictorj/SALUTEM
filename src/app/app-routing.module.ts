@@ -48,10 +48,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/nutriente-track/nutriente-track.module').then( m => m.NutrienteTrackPageModule)
   },
   {
-    path: 'refeicao',
-    loadChildren: () => import('./pages/refeicao/refeicao.module').then( m => m.RefeicaoPageModule)
-  },
-  {
     path: 'receitas',
     loadChildren: () => import('./pages/receitas/receitas.module').then( m => m.ReceitasPageModule)
   },
@@ -59,6 +55,27 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'edit-personal-data',
+    loadChildren: () => import('./pages/edit-personal-data/edit-personal-data.module').then( m => m.EditPersonalDataPageModule)
+  },
+  {
+    path: 'imc-calculation',
+    loadChildren: () => import('./pages/imc-calculation/imc-calculation.module').then( m => m.ImcCalculationPageModule)
+  },  {
+    path: 'refeicao',
+    loadChildren: () => import('./refeicao/refeicao.module').then( m => m.RefeicaoPageModule)
+  },
+
+
 
 
 

@@ -32,7 +32,7 @@ export class LoginPage {
   }
 
   forgotPassword() {
-    console.log('Redirecionando para recuperação de senha...');
+    this.router.navigate(['/forgot-password']);
   }
 
   loginWithGoogle() {

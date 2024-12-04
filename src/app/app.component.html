@@ -1,3 +1,29 @@
 <ion-app>
+  <!-- Conteúdo das páginas será carregado aqui -->
   <ion-router-outlet></ion-router-outlet>
+
+  <!-- Barra de Navegação Inferior (só aparece quando o usuário estiver autenticado) -->
+  <ion-footer *ngIf="isAuthenticated">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" (click)="goToHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="refeição" (click)="goToRefeicao()">
+        <ion-icon name="nutrition-outline"></ion-icon>
+        <ion-label>Refeição</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="add" (click)="onAdd()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="nutriente-track" (click)="goToNutriente()">
+        <ion-icon name="restaurant-outline"></ion-icon>
+        <ion-label>Nutrientes</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="exercicio" (click)="goToExercicio()">
+        <ion-icon name="barbell-outline"></ion-icon>
+        <ion-label>Treino</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>
 </ion-app>

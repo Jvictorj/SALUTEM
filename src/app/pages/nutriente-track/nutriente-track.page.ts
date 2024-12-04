@@ -67,9 +67,11 @@ export class NutrienteTrackPage {
 
   // Adicionar alimento ao serviço de refeição
   addToMeal(alimento: any) {
-    const nomeRefeicao = 'Café da Manhã'; // Exemplo, você pode modificar para escolher uma refeição dinâmica
+    const nomeRefeicao = 'Café da Manhã'; // Nome da refeição, pode ser dinâmico
     this.refeicaoService.addAlimento(nomeRefeicao, alimento);
+    console.log(`Alimento adicionado à refeição: ${nomeRefeicao}`, alimento);
   }
+
 
   // Verificar se a categoria é líquida e definir unidade
   getUnitForCategory(category: string): string {

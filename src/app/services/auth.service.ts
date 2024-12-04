@@ -1,20 +1,29 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { User } from 'firebase/auth'; // Alterado para importar do pacote firebase/auth
+import { User } from 'firebase/auth';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {}
+  // Usando BehaviorSubject para representar o estado de autenticação
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
+
+  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
+    // Atualizando o estado de autenticação sempre que o status do usuário mudar
+    this.afAuth.onAuthStateChanged((user) => {
+      this.isAuthenticatedSubject.next(!!user); // Atualiza o estado conforme o usuário muda
+    });
+  }
 
   // Método para obter o usuário autenticado
-async getCurrentUser(): Promise<User | null> {
-  const user = await this.afAuth.currentUser;
-  return user as User | null; // Retorna o usuário ou null
-}
-
+  async getCurrentUser(): Promise<User | null> {
+    const user = await this.afAuth.currentUser;
+    return user as User | null;
+  }
 
   // Registro com salvamento no Firestore
   async register(
@@ -44,7 +53,7 @@ async getCurrentUser(): Promise<User | null> {
       });
     } catch (error: any) {
       console.error('Erro ao registrar:', error.message);
-      throw new Error(error.message); // Passa o erro para o componente
+      throw new Error(error.message);
     }
   }
 
@@ -55,11 +64,17 @@ async getCurrentUser(): Promise<User | null> {
       console.log('Login bem-sucedido!');
     } catch (error: any) {
       console.error('Erro ao fazer login:', error.message);
-      throw new Error(error.message); // Passa o erro para o componente
+      throw new Error(error.message);
     }
   }
 
-  logout(): Promise<void> {
-    return this.afAuth.signOut();
+  // Logout
+  async logout(): Promise<void> {
+    await this.afAuth.signOut();
+  }
+
+  // Esqueceu senha
+  sendPasswordReset(email: string) {
+    return this.afAuth.sendPasswordResetEmail(email);
   }
 }

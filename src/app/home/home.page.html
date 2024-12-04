@@ -1,13 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Bem-vindo!</ion-title>
-    <ion-buttons slot="end">
+    <ion-title>
+      Bem-vindo, {{ userName }}
+    </ion-title>
+    <ion-buttons (click)="goToProfile()" slot="end">
+      <!-- Avatar -->
       <ion-avatar class="user-avatar">
-        <ion-img src="path/to/user-avatar.jpg"></ion-img>
+        <ion-img [src]="avatarUrl"></ion-img>
       </ion-avatar>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+<!-- Seletor de Dias -->
+<ion-segment class="day-selector" [(ngModel)]="selectedDay">
+  <ion-segment-button *ngFor="let day of weekDays" [value]="day.value" (click)="selectDay(day)">
+    <ion-label>{{ day.label }}</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
 
 <ion-content class="home-page">
 
@@ -20,7 +31,7 @@
       <div class="progress-info">
         <div class="progress-item">
           <ion-icon name="heart-outline" slot="start"></ion-icon>
-          <p>Calorias Consumidas</p>
+          <p>Calorias <br> Consumidas</p>
           <h2>350 kcal</h2>
         </div>
         <div class="progress-item">
@@ -36,13 +47,6 @@
       </div>
     </ion-card-content>
   </ion-card>
-
-  <!-- Seletor de Dias -->
-  <ion-segment class="day-selector" [(ngModel)]="selectedDay">
-    <ion-segment-button *ngFor="let day of weekDays" [value]="day.value" (click)="selectDay(day)">
-      <ion-label>{{ day.label }}</ion-label>
-    </ion-segment-button>
-  </ion-segment>
 
   <!-- Resumo de Calorias -->
   <ion-card class="calorias-card">
@@ -76,7 +80,7 @@
       <p><strong>08:00</strong> - Café da manhã</p>
       <p><strong>12:00</strong> - Almoço</p>
       <p><strong>19:00</strong> - Jantar</p>
-      <ion-button expand="block" color="secondary">Ver Mais</ion-button>
+      <ion-button expand="block" color="primary">Ver Mais</ion-button>
     </ion-card-content>
   </ion-card>
 
@@ -107,27 +111,3 @@
   </ion-grid>
 </ion-content>
 
-<!-- Barra de Navegação Inferior -->
-<ion-footer>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="diario">
-      <ion-icon name="book-outline"></ion-icon>
-      <ion-label>Diário</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="dietas">
-      <ion-icon name="nutrition-outline"></ion-icon>
-      <ion-label>Dietas</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="add" (click)="onAdd()">
-      <ion-icon name="add-circle"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button tab="nutriente-track" (click)="goToNutriente()">
-      <ion-icon name="restaurant-outline"></ion-icon>
-      <ion-label>Alimentos</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="exercicio" (click)="goToExercicio()">
-      <ion-icon name="barbell-outline"></ion-icon>
-      <ion-label>Treino</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-footer>
