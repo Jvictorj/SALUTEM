@@ -1,8 +1,11 @@
+import { finalize } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
+
+
 
 import { ImcService } from 'src/app/services/imc.service';
 
@@ -119,23 +122,37 @@ export class ProfilePage implements OnInit {
       const userId = user.uid;
       const filePath = `users/${userId}/profile.jpg`; // O caminho onde a imagem será armazenada no Firebase Storage
       const fileRef = this.storage.ref(filePath);
+      
+      // Primeiro, faz o upload do arquivo
       const task = this.storage.upload(filePath, file);
 
-      // Aguardar o upload da imagem e atualizar a URL do perfil
-      task.snapshotChanges().toPromise().then(() => {
-        fileRef.getDownloadURL().subscribe((url: string) => {
-          // Atualizando a URL da imagem de perfil no Firestore e na variável profilePicture
-          this.profilePicture = url; // Atualizando a variável profilePicture
-          this.user.photoUrl = url;
-          this.firestore.collection('users').doc(userId).update({ photoUrl: url });
-        });
-      }).catch((error: any) => {
-        console.error("Erro no upload da imagem:", error);
-      });
+      // Espera o upload terminar antes de obter a URL
+      task.snapshotChanges().pipe(
+        finalize(() => {
+          fileRef.getDownloadURL().subscribe((url: string) => {
+            this.profilePicture = url;
+            this.user.photoUrl = url;
+            
+            // Atualizar o Firestore com o URL da imagem de perfil
+            this.firestore.collection('users').doc(userId).update({
+              photoUrl: url
+            }).then(() => {
+              console.log("URL da imagem de perfil atualizada com sucesso.");
+            }).catch((error) => {
+              console.error("Erro ao atualizar URL no Firestore:", error);
+            });
+          }, error => {
+            console.error("Erro ao obter a URL da imagem:", error);
+          });
+        })
+      ).subscribe();
+      
+
     } else {
       console.error("Usuário não autenticado");
     }
   }
+
 
   // Método para ir para a página de perfil
   goToProfile() {

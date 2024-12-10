@@ -6,32 +6,37 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// Firebase and AngularFire
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
 import { environment } from '../environments/environment';
 
-// Importando o componente do modal
+// Importing the Firebase Service (optional if you created one)
+import { FirebaseService } from '../../../SALUTEM/src/app/services/firebase.service';
+
+// Importing the modal component
 import { ReceitaDetailComponent } from './component/components/receita-detail/receita-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReceitaDetailComponent // Adicionando o componente ao declarations
+    ReceitaDetailComponent, // Register the modal component
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    // Firebase configuration
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FirebaseService, // Optional: If you created a Firebase service to initialize Firebase
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
