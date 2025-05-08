@@ -34,11 +34,11 @@
 
 | Tela de Boas-Vindas | Registro | Login |
 |---------------------|----------|-------|
-| ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/welcome.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/register.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/login.png?raw=true) |
+| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/welcome.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/register.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/login.png?raw=true) |
 
 | Tela Principal | Informações Nutricionais |
 |----------------|---------------------------|
-| ![](https://github.com/Jvictorj/SALUTEM/blob/main/src/assets/Sscreenshots/home.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/nutriente-track.png?raw=true) |
+| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/home.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/nutriente-track.png?raw=true) |
 
 ## 🎯 Objetivos do Projeto
 
@@ -48,14 +48,12 @@
 
 ## 👥 Desenvolvedores
 
-- João Vitor Gomes
+- João Vitor Gomes  
 - Cauã Silva
 
-## 📍 Objetivo
+---
 
 **Todo mundo pode ser saudável. Viva com mais vitalidade com o Salutem.** 💚
-
-Oferecer uma ferramenta digital acessível e personalizada para melhorar o bem-estar dos usuários, unindo alimentação saudável e atividade física.
 
 
 ---
