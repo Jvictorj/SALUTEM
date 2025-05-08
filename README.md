@@ -38,7 +38,7 @@
 
 | Tela Principal | Informações Nutricionais |
 |----------------|---------------------------|
-| ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/home.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/nutriente-track.png?raw=true) |
+| ![](https://github.com/Jvictorj/SALUTEM/blob/main/src/assets/Sscreenshots/home.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/nutriente-track.png?raw=true) |
 
 ## 🎯 Objetivos do Projeto
 
@@ -53,9 +53,10 @@
 
 ## 📍 Objetivo
 
+**Todo mundo pode ser saudável. Viva com mais vitalidade com o Salutem.** 💚
+
 Oferecer uma ferramenta digital acessível e personalizada para melhorar o bem-estar dos usuários, unindo alimentação saudável e atividade física.
 
-**Todo mundo pode ser saudável. Viva com mais vitalidade com o Salutem.** 💚
 
 ---
 
