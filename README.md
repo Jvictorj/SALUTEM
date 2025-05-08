@@ -10,6 +10,7 @@
 - **Sugestões de exercícios físicos personalizadas**
 - **Criação e edição de treinos personalizados**
 - **Relatórios e gráficos de progresso** com uso de Chart.js
+- **Segurança e armazenamento com Firebase
 
 ## ⚙️ Requisitos Técnicos
 
@@ -20,18 +21,30 @@
 - Plano de exercícios adaptado
 - Estatísticas e relatórios de evolução
 
-### Requisitos Não Funcionais:
-- Compatível com Android e iOS
-- Interface responsiva e intuitiva
-- Segurança com criptografia de dados
-- Escalável e com fácil manutenção
-
 ## 🚀 Tecnologias Utilizadas
 
 - **Ionic Framework**
 - **Angular**
+- **TypeScript**
+- **Firebase**
 - **Chart.js**
 - **TACO (Tabela de Composição de Alimentos)**
+
+## 📲 Telas do Aplicativo
+
+| Tela de Boas-Vindas | Registro | Login |
+|---------------------|----------|-------|
+| ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/welcome.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/register.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/login.png?raw=true) |
+
+| Tela Principal | Informações Nutricionais |
+|----------------|---------------------------|
+| ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/home.png?raw=true) | ![](https://github.com/**seuusuario**/**seurepo**/blob/main/src/assets/Sscreenshots/nutriente-track.png?raw=true) |
+
+## 🎯 Objetivos do Projeto
+
+- Promover a saúde e o bem-estar com base em dados confiáveis
+- Oferecer uma experiência personalizada e interativa
+- Fornecer relatórios claros para acompanhamento de metas
 
 ## 👥 Desenvolvedores
 
@@ -41,6 +54,8 @@
 ## 📍 Objetivo
 
 Oferecer uma ferramenta digital acessível e personalizada para melhorar o bem-estar dos usuários, unindo alimentação saudável e atividade física.
+
+**Todo mundo pode ser saudável. Viva com mais vitalidade com o Salutem.** 💚
 
 ---
 
