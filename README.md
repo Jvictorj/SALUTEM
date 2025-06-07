@@ -10,7 +10,7 @@
 - **Sugestões de exercícios físicos personalizadas**
 - **Criação e edição de treinos personalizados**
 - **Relatórios e gráficos de progresso** com uso de Chart.js
-- **Segurança e armazenamento com Firebase
+- **Segurança e armazenamento com Firebase**
 
 ## ⚙️ Requisitos Técnicos
 
@@ -32,13 +32,17 @@
 
 ## 📲 Telas do Aplicativo
 
-| Tela de Boas-Vindas | Registro | Login |
-|---------------------|----------|-------|
+| Boas-Vindas | Registro | Login |
+|------------|----------|-------|
 | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/welcome.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/register.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/login.png?raw=true) |
 
-| Tela Principal | Informações Nutricionais |
-|----------------|---------------------------|
-| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/home.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/nutriente-track.png?raw=true) |
+| Tela Principal | Informações Nutricionais (Resumo) | Informações Nutricionais (Alimentos) |
+|----------------|------------------------------------|----------------------------------------|
+| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/Home.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/nutriente-track%20-%20(Resumo).png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/nutriente-track%20-%20(Informações).png?raw=true) |
+
+| Tela de Exercícios |
+|--------------------|
+| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/page-exercicio.png?raw=true) |
 
 ## 🎯 Objetivos do Projeto
 
@@ -54,7 +58,3 @@
 ---
 
 **Todo mundo pode ser saudável. Viva com mais vitalidade com o Salutem.** 💚
-
-
----
-
