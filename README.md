@@ -40,9 +40,9 @@
 |----------------|------------------------------------|----------------------------------------|
 | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/Home.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/nutriente-track%20-%20(Resumo).png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/nutriente-track%20-%20(Informações).png?raw=true) |
 
-| Tela de Exercícios |
-|--------------------|
-| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/page-exercicio.png?raw=true) |
+| Tela de Exercícios | IMC | Perfil |
+|--------------------|-----|--------|
+| ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/page-exercicio.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/IMC.png?raw=true) | ![](https://github.com/Jvictorj/SALUTEM/blob/master/src/assets/Sscreenshots/Perfil.png?raw=true) |
 
 ## 🎯 Objetivos do Projeto
 
